@@ -1,13 +1,13 @@
 FileManager
 ===========
- * [download](./#Download)
- * [config](./#Config)
- * [methods](./#Methods)
- * [events](./#Methods)
- * [tinyMCE](./#tinyMCE)
- * [api](./#Api)
- * [example](./#Example)
- * [demo](./#DEMO)
+ * [download](#Download)
+ * [config](#Config)
+ * [methods](#Methods)
+ * [events](#Methods)
+ * [tinyMCE](#tinyMCE)
+ * [api](#Api)
+ * [example](#Example)
+ * [demo](#DEMO)
  
 
 ## Download
