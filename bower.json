@@ -5,9 +5,14 @@
   "authors": [
     "Konstantin Nizhinskiy <konstantin.nizhinskiy@gmail.com>"
   ],
-  "description": "File manager",
+  "description": "File manager marionette.js",
   "keywords": [
-    "file"
+    "file",
+    "manager",
+    "marionette",
+    "tinymce"
+
+
   ],
   "license": "MIT",
   "dependencies": {
