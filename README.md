@@ -15,6 +15,7 @@ FileManager
   bower install nks-file-manager;
   git clone https://github.com/konstantin-nizhinskiy/FileManager;
 ```
+
 ## Config
 ```js
 require(['FileManager'],function(fileManager)
@@ -25,6 +26,7 @@ require(['FileManager'],function(fileManager)
     });
 });
 ```
+
 ## Methods
  * init - FileManager init config
  * getFileManager - Get base layout view FileManager  return "FileManagerLayoutView"
@@ -51,8 +53,10 @@ require(['FileManager'],function(fileManager)
         toolbar: 'nks-file-manager'
     });
 ```
+
 ## Api
    * [Symfony bundle](https://github.com/konstantin-nizhinskiy/FileManagerBundle)
+
 ### all api url
  * Get all collection user file:
     * Route:   {{host}}/api/userFile/
@@ -84,7 +88,9 @@ require(['FileManager'],function(fileManager)
     * params:
         * namespace - now open folder
         * file - <input type="file">
+
 ## Example
+
 #### open file manager in modal view 
 ```html
 <!-- ... -->
@@ -106,6 +112,7 @@ require(['FileManager'],function(fileManager)
     </script>
 <!-- ... -->    
 ```
+
 #### example tinyMCE 
 ```html
 <!-- ... -->
@@ -131,12 +138,16 @@ require(['FileManager'],function(fileManager)
 ```
 
 ## DEMO
+
 #### file manager
 ![Alt text](/doc/menu.png)
 ![Alt text](/doc/th.png)
+
 #### file manager load
 ![Alt text](/doc/loadFile.png)
+
 #### file manager modal view
 ![Alt text](/doc/modal.png)
+
 #### file manager tinyMCE plugin
 ![Alt text](/doc/tinyMCE.png)
