@@ -1,0 +1,32 @@
+@import "const";
+.mce-fm-tinymce-source,.fm-tinymce-source{
+  .mce-fm-tinymce-name, .fm-tinymce-name{
+    width: 100px;
+    padding-top: 7px;
+  }
+  .mce-fm-tinymce-input,.fm-tinymce-input{
+    width: 250px;
+    border-right: none;
+  }
+  .mce-fm-tinymce-button,.fm-tinymce-button{
+    width: 40px;
+    border: 1px solid #c5c5c5;
+    border-left: none;
+  }
+}
+.mce-fm-tinymce-dimensions,.fm-tinymce-dimensions{
+  .mce-fm-tinymce-name, .fm-tinymce-name{
+    width: 100px;
+    padding-top: 7px;
+  }
+  .mce-fm-tinymce-x, .fm-tinymce-x{
+    width: 10px;
+    padding-top: 7px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .mce-fm-tinymce-height,.fm-tinymce-height,.mce-fm-tinymce-width,.fm-tinymce-width  {
+    width: 50px;
+  }
+
+}

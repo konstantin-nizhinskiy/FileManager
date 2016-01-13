@@ -1,0 +1,49 @@
+<div class="fm-namespace">{{= lastNamespace }}</div>
+
+
+{{ if(typeViewContent=='menu'){ }}
+<div class="fm-type-view-menu">
+    {{ if(lastNamespace!='/'){ }}
+
+    <div class="fm-back-folder fm-user-file">
+        <div class="fm-user-file-content fm-user-folder-content icon-folder-open"></div>
+        <div class="fm-user-file-name">
+            <b>. . .</b>
+        </div>
+    </div>
+    {{ } }}
+    <div class="fm-user-files ">
+
+    </div>
+</div>
+{{ }else{ }}
+<div class="fm-type-view-th">
+    <table>
+        <thead>
+        <tr>
+            <td></td>
+            <td>{{= fmTrans.get('file.name') }}</td>
+            <td>{{= fmTrans.get('file.type') }}</td>
+            <td>{{= fmTrans.get('file.size') }}</td>
+            <td>{{= fmTrans.get('file.create') }}</td>
+        </tr>
+        {{ if(lastNamespace!='/'){ }}
+        <tr>
+            <td></td>
+            <td class="fm-back-folder"><div class="fm-user-file-content fm-user-folder-content icon-folder-open"><span class="fm-user-file-name"><b>. . .</b></span></div>
+
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{ } }}
+        </thead>
+
+        <tbody class="fm-user-files">
+
+        </tbody>
+
+    </table>
+</div>
+{{ } }}

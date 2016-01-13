@@ -1,0 +1,45 @@
+@import "const";
+@import "loadFile";
+@mixin content($width: 85%){
+  float: left;
+  background: $color_content;
+  margin-left: -1px;
+  width: $width;
+  min-height: 500px;
+  z-index: 100;
+  position: relative;
+  @include loadFile();
+  .fm-namespace{
+    font-size: 15px;
+    margin: 5px 5px 5px 10px;
+    font-weight: bold;
+    min-height: 30px;
+  }
+  .fm-back-folder{
+    cursor: pointer;
+  }
+  .fm-panel{
+    width: 100%;
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid darken($color_panel,10%);
+    border-width: 1px 0 1px 1px;
+    background: $color_panel;
+    .fm-panel-btn-right{
+      float: right;
+      margin-left: 0!important;
+      margin-right: 10px;
+    }
+    .fm-panel-btn {
+      color:$fm-panel-btn-color;
+      margin-left: 10px;
+      a {
+        cursor: pointer;
+        &:hover,&.active {
+          color:lighten($fm-panel-btn-color,40%);
+        }
+      }
+    }
+  }
+}

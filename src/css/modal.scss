@@ -1,0 +1,26 @@
+@import "const";
+.fm-modal{
+  width: 100%;
+
+  .fm-modal-contents {
+    background: $color_content;
+    border-radius: 12px;
+    padding: 5px;
+    top: 0;
+    width: 96%;
+    margin: 1%;
+    position: fixed;
+    z-index: 65538;
+  }
+  .fm-modal-in{
+    top: 0;
+    left: 0;
+    z-index: 65537;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    background: $modal-background;
+    opacity: $modal-background-opacity;
+  }
+}
+

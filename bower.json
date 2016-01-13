@@ -1,0 +1,23 @@
+{
+  "name": "nks-file-manager",
+  "version": "0.0.1",
+  "homepage": "https://github.com/konstantin-nizhinskiy/FileManager",
+  "authors": [
+    "Konstantin Nizhinskiy <konstantin.nizhinskiy@gmail.com>"
+  ],
+  "description": "File manager",
+  "keywords": [
+    "file"
+  ],
+  "license": "MIT",
+  "dependencies": {
+      "marionette": ">=2.4.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

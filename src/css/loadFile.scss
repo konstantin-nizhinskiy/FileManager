@@ -1,0 +1,29 @@
+@import "const";
+@mixin loadFile() {
+  .fm-drop-zone {
+    color: #555;
+    font-size: 18px;
+    text-align: center;
+
+    width: 98%;
+    padding: 100px 0;
+    margin: 50px auto;
+
+    background: $drop-zone-background;
+    border: 4px dashed darken($drop-zone-background,35);
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    &.hover{
+      background: darken($drop-zone-background,5);
+    }
+    &.error{
+      background: $drop-zone-background-error;
+    }
+    &.drop{
+      background: $drop-zone-background-drop;
+    }
+  }
+
+}

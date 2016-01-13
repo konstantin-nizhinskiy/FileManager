@@ -1,0 +1,75 @@
+@import "nav";
+@import "const";
+@import "header";
+@import "content";
+@import "ico";
+@import "userFile";
+@import "createFolder";
+@import "modal";
+@import "tinyMCE";
+.FileManagerLayout-nav{
+  @include nav(30%)
+}
+.FileManagerLayout-content{
+  @include content(70%)
+}
+
+@media (min-width: $screen-sm-min) {
+  .FileManagerLayout-nav{
+    @include nav(30%)
+  }
+  .FileManagerLayout-content{
+    @include content(70%)
+  }
+}
+@media (min-width: $screen-md-min) {
+  .FileManagerLayout-nav{
+    @include nav(25%)
+
+  }
+  .FileManagerLayout-content{
+    @include content(75%)
+  }
+}
+@media (min-width: $screen-lg-min) {
+  .FileManagerLayout-nav{
+    @include nav(15%)
+  }
+  .FileManagerLayout-content{
+    @include content(85%)
+  }
+}
+
+.fm-input{
+  background: #fff none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  color: #555;
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+}
+
+.fm-btn {
+  -moz-user-select: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  background: $btn-background none;
+  border-color: darken($btn-background,20%);
+  color: $btn-color;
+  &:hover{
+    background: darken($btn-background,10%);
+  }
+}

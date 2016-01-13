@@ -1,0 +1,38 @@
+{{ if(typeViewContent=='menu'){ }}
+<div class="fm-user-file">
+
+        {{ if(isDir==true){ }}
+            <div class="fm-check-file fm-user-file-content fm-user-folder-content icon-folder-open"></div>
+        {{ }else{ }}
+        <div class="fm-check-file fm-user-file-content fm-user-folder-content">
+            <img src="{{= link }}">
+        </div>
+        {{ } }}
+        <div class=" fm-user-file-name">
+            {{= name }}
+            {{ if(fileCheck==false){}}
+            <div class="fm-user-file-check icon-check-empty" style="display: none;"></div>
+            {{ }else{ }}
+            <div class="fm-user-file-check icon-check"></div>
+            {{ } }}
+        </div>
+</div>
+    {{ }else{ }}
+    <td style="width: 20px;">{{ if(fileCheck==false){}}
+        <span class="fm-user-file-check icon-check-empty"></span>
+        {{ }else{ }}
+        <span class="fm-user-file-check icon-check"></span>
+        {{ } }}
+    </td>
+    <td>
+        {{ if(isDir==true){ }}
+        <div class="fm-check-file fm-user-file-content fm-user-folder-content icon-folder-open">{{= name }}</div>
+        {{ }else{ }}
+        <div class="fm-check-file icon-picture">{{= name }}</div>
+        {{ } }}
+    </td>
+    <td>{{= isDir==true?'':typeFile }}</td>
+    <td>{{= isDir==true?'':fileSize }}</td>
+    <td>{{= dateLoad }}</td>
+{{ } }}
+

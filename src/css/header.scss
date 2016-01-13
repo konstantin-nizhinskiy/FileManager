@@ -1,0 +1,24 @@
+
+@import "const";
+.FileManagerLayout-header > div,.FileManagerLayout-header-modal > div{
+  background-color: $header-background;
+  border-color: $header-border;
+  width: 100%;
+  height: 40px;
+
+  .fm-header-title{
+    width: 150px;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  .fm-header{
+    position: relative;
+    .fm-header-cancel{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      cursor: pointer;
+      color:darken($header-background,50%)
+    }
+  }
+}

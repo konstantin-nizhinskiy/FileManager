@@ -1,0 +1,61 @@
+@import "const";
+.fm-type-view-menu{
+  .fm-user-file {
+    width: $ico_file_width;
+    height: $ico_file_height;
+    margin: 10px;
+    border: 1px solid darken($file_background, 10%);
+    /*border-width: 1px;*/
+    background: $file_background;
+    float: left;
+    cursor: pointer;
+    &:hover {
+      background: darken($file_background, 10%);
+    }
+    .fm-user-file-content {
+      height: ($ico_file_height - 30);
+      text-align: center;
+      margin: 0 auto;
+      &.fm-user-folder-content {
+        font-size: ($ico_file_height*0.7);
+        color: $icon-folder-color;
+      }
+      img {
+        margin: 5px;
+        width: $ico_file_width - 10;
+        height: $ico_file_height - 40;
+      }
+    }
+    .fm-user-file-name {
+      text-align: center;
+      height: 30px;
+      position: relative;
+      .fm-user-file-check {
+        position: absolute;
+        cursor: pointer;
+        right: 0;
+        top: 0;
+        font-size: 27px;
+      }
+    }
+  }
+}
+.fm-type-view-th{
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+  table > tbody > tr > td, table > tbody > tr > th, table > tfoot > tr > td, table > tfoot > tr > th, table > thead > tr > td, table > thead > tr > th {
+    border-top: 1px solid #ddd;
+    line-height: 1.42857;
+    vertical-align: top;
+    padding: 5px;
+  }
+
+}
+.fm-check-file{
+  cursor: pointer;
+}
