@@ -12,8 +12,8 @@ FileManager
 
 ## Download
 ```sh
-  bower install nks-file-manager;
-  git clone https://github.com/konstantin-nizhinskiy/FileManager;
+  $ bower install nks-file-manager;
+  $ git clone https://github.com/konstantin-nizhinskiy/FileManager;
 ```
 
 ## Config
