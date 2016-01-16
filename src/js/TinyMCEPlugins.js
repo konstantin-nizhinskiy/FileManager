@@ -1,8 +1,7 @@
 define(['tinyMCE', 'FileManager'], function (tinymce, fileManager,fmTrans) {
-    tinymce.PluginManager.add('nks-file-manager', function (editor, url) {
+    tinymce.PluginManager.add('nksFileManager', function (editor, url) {
 
-        editor.addButton('nks-file-manager', {
-           // url: 'mydialog.html',
+        editor.addButton('nksFileManager', {
             icon: ' icon-picture',
             onclick: function () {
                 require(['translations/fmTrans'],function(fmTrans) {
