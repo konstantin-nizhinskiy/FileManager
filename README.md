@@ -49,8 +49,8 @@ require(['FileManager'],function(fileManager)
 ```js
     tinymce.init({
         selector:'textarea',
-        plugins: 'nks-file-manager',
-        toolbar: 'nks-file-manager'
+        plugins: 'nksFileManager',
+        toolbar: 'nksFileManager'
     });
 ```
 
