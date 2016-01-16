@@ -15,7 +15,7 @@ define([
 
         ) {
         return Marionette.LayoutView.extend({
-            className:'fm-modal',
+            className:'fm-modal file-manager-main',
             initialize:function(){
 
             },

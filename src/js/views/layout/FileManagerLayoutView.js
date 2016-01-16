@@ -17,6 +17,7 @@ define([
 
         ) {
         return Marionette.LayoutView.extend({
+            className:'file-manager-main',
             _header:true,
             initialize:function(args){
                 if('undefined'!==typeof args.header ){

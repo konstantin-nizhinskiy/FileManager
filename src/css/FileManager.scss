@@ -7,6 +7,12 @@
 @import "createFolder";
 @import "modal";
 @import "tinyMCE";
+.file-manager-main *, .file-manager-main *::after, .file-manager-main *::before{
+  box-sizing: content-box !important;
+}
+.file-manager-main input[type=file]{
+  display: inline;
+}
 .FileManagerLayout-nav{
   @include nav(30%)
 }
