@@ -42,6 +42,7 @@ define([
                 _this.trigger('selectFile', args);
                 fileManagerLayoutModalView.remove();
             });
+            return fileManagerLayoutModalView;
         };
 
 
