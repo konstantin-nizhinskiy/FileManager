@@ -6,7 +6,7 @@ define([
 
     ],
     function(Marionette,JST,fileManagerConfig,fmTrans) {
-        return Marionette.ItemView.extend({
+        return Marionette.View.extend({
             initialize:function(args){
                 this.lastNamespace=args.lastNamespace||'/';
             },
@@ -29,7 +29,7 @@ define([
                 })
             },
             template: JST.FileManagerCreateFolderView,
-            templateHelpers:function(){
+            templateContext:function(){
                 return {
                     fmTrans:fmTrans
                 }

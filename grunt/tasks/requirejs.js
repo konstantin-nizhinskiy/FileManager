@@ -1,7 +1,6 @@
 "use strict";
 var path = require('path'),
-    grunt = require('grunt'),
-    tosource = require('tosource');
+    grunt = require('grunt');
 module.exports = {
     usebanner: {
         MinHelpWC: {
@@ -25,6 +24,7 @@ module.exports = {
                     'jquery',
                     'underscoreBase',
                     'backbone',
+                    'backbone.radio',
                     'marionette'
 
                 ],
@@ -37,6 +37,8 @@ module.exports = {
                     underscoreBase: '../../bower_components/underscore/underscore-min',
                     underscore: 'underscoreConfig',
                     backbone: '../../bower_components/backbone/backbone-min',
+                    "backbone.radio": "../../bower_components/backbone.radio/build/backbone.radio.min",
+
                     marionette: '../../bower_components/marionette/lib/backbone.marionette.min'
 
                 },

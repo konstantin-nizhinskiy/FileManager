@@ -7,17 +7,17 @@ define([
 
     ],
     function(Marionette,JST,fileManagerConfig,fmTrans) {
-        return Marionette.ItemView.extend({
+        return Marionette.View.extend({
             initialize:function(){
 
             },
             ui:{
-                fmUserFileContent:'.fm-user-file-content',
                 fmUserFile:'.fm-user-file',
-                fmUserFileCheck:'.fm-user-file-check'
+                fmUserFileCheck:'.fm-user-file-check',
+                select:'[data-bind=select]'
             },
             events:{
-                'click @ui.fmUserFileContent':'fmUserFileContent',
+                'click @ui.select':'onSelect',
                 'mouseenter @ui.fmUserFile':'mouseOn',
                 'mouseleave @ui.fmUserFile':'mouseOff',
                 'click @ui.fmUserFileCheck':'fmUserFileCheck'
@@ -31,7 +31,7 @@ define([
                     this.ui.fmUserFileCheck.hide();
                 }
             },
-            fmUserFileContent:function(){
+            onSelect:function(){
                 this.model.trigger('selectContent',this.model);
             },
             fmUserFileCheck:function(){
@@ -41,7 +41,7 @@ define([
 
             },
             template: JST.FileManagerUserFileView,
-            templateHelpers:function(){
+            templateContext:function(){
                 var _fileSize=this.model.get('fileSize'),
                     _dateLoad=this.model.get('dateLoad');
                 if(_fileSize!==false){

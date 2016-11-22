@@ -20,9 +20,9 @@ define([
         CreateFolderModel,
         fileManagerConfig
     ) {
-        return Marionette.ItemView.extend({
+        return Marionette.View.extend({
             initialize:function(){
-
+                /*this.on('all',console.warn)*/
 
             },
             ui:{
@@ -34,6 +34,12 @@ define([
                 viewTh:'.view-th',
                 viewMenu:'.view-menu',
                 content:'[data-content]'
+            },
+            childViewTriggers:{
+              'selectFile':'selectFile'
+            },
+            regions:{
+                contentRegion:'[data-region=content]'
             },
             events:{
                 'click @ui.createFolder':'createFolder',
@@ -57,8 +63,9 @@ define([
                 var fileManagerUserListView= new FileManagerUserListView({
                     collection:this.fileManagerUserFileCollection
                 });
-                fileManagerUserListView.on('selectFile',this.trigger.bind(this,'selectFile'));
-                this.ui.content.html(fileManagerUserListView.render().el);
+                //fileManagerUserListView.on('selectFile',this.trigger.bind(this,'selectFile'));
+                this.showChildView('contentRegion',fileManagerUserListView)
+                //this.ui.content.html(fileManagerUserListView.render().el);
                 this.fileCheck();
             },
             createFolder:function(){
@@ -70,7 +77,8 @@ define([
                     model:new CreateFolderModel()
 
                 });
-                this.ui.content.html(fileManagerCreateFolderView.render().el);
+                this.showChildView('contentRegion',fileManagerCreateFolderView)
+                //this.ui.content.html(fileManagerCreateFolderView.render().el);
                 fileManagerCreateFolderView.once('folderView',this.folderView.bind(this))
             },
             loadFile:function(){
@@ -79,7 +87,8 @@ define([
                 var fileManagerLoadFileView= new FileManagerLoadFileView({
                     lastNamespace:this.fileManagerUserFileCollection.lastNamespace||''
                 });
-                this.ui.content.html(fileManagerLoadFileView.render().el);
+                this.showChildView('contentRegion',fileManagerLoadFileView)
+                //this.ui.content.html(fileManagerLoadFileView.render().el);
                 fileManagerLoadFileView.once('folderView',this.folderView.bind(this));
 
             },
@@ -114,7 +123,7 @@ define([
                 this.fileCheck();
             },
             template: JST.FileManagerContentView,
-            templateHelpers:function(){
+            templateContext:function(){
                 return {
                     fmTrans:fmTrans
                 }

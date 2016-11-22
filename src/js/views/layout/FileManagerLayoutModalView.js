@@ -14,34 +14,32 @@ define([
         FileManagerHeaderView
 
         ) {
-        return Marionette.LayoutView.extend({
+        return Marionette.View.extend({
             className:'fm-modal file-manager-main',
             initialize:function(){
-
             },
             template: JST.FileManagerLayoutModalView,
-
-            regions: {
-
-                header: ".FileManagerLayout-header-modal",
-                content: ".FileManagerLayout-content-modal",
-                footer: ".FileManagerLayout-footer-modal"
-
-
-
+            childViewTriggers:{
+              'selectFile':'selectFile'
             },
-            onRender:function(){
+            childViewEvents:{
+                'fm:modal:close':'remove'
+            },
+            regions: {
+                headerRegion: "[data-region=header]",
+                contentRegion: "[data-region=content]",
+                footerRegion: "[data-region=footer]"
+            },
 
+            onRender:function(){
                 var fileManagerLayoutView = new FileManagerLayoutView({
-                    header:false
+                        header:false
                     }),
                     fileManagerHeaderView=new FileManagerHeaderView({
                         close:true
                     });
-                fileManagerHeaderView.once('fmHeaderCancel',this.remove.bind(this));
-                this.content.show(fileManagerLayoutView);
-                fileManagerLayoutView.on('selectFile',this.trigger.bind(this,'selectFile'));
-                this.header.show(fileManagerHeaderView);
+                this.showChildView('contentRegion',fileManagerLayoutView);
+                this.showChildView('headerRegion',fileManagerHeaderView);
             }
         });
     }

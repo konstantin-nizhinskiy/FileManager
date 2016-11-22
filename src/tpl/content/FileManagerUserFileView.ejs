@@ -2,9 +2,9 @@
 <div class="fm-user-file">
 
         {{ if(isDir==true){ }}
-            <div class="fm-check-file fm-user-file-content fm-user-folder-content icon-folder-open"></div>
+            <div data-bind="select" class="fm-check-file fm-user-file-content fm-user-folder-content icon-folder-open"></div>
         {{ }else{ }}
-        <div class="fm-check-file fm-user-file-content fm-user-folder-content">
+        <div data-bind="select" class="fm-check-file fm-user-file-content fm-user-folder-content">
             <img src="{{= link }}">
         </div>
         {{ } }}
@@ -26,9 +26,9 @@
     </td>
     <td>
         {{ if(isDir==true){ }}
-        <div class="fm-check-file fm-user-file-content fm-user-folder-content icon-folder-open">{{= name }}</div>
+        <div data-bind="select" class="fm-check-file fm-user-file-content fm-user-folder-content icon-folder-open">{{= name }}</div>
         {{ }else{ }}
-        <div class="fm-check-file icon-picture">{{= name }}</div>
+        <div data-bind="select" class="fm-check-file icon-picture">{{= name }}</div>
         {{ } }}
     </td>
     <td>{{= isDir==true?'':typeFile }}</td>

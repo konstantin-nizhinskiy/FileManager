@@ -4,9 +4,9 @@ define([
         'translations/fmTrans'
     ],
     function(Marionette,JST,fmTrans) {
-        return Marionette.ItemView.extend({
+        return Marionette.View.extend({
             template: JST.FileManagerNavView,
-            templateHelpers:function(){
+            templateContext:function(){
                 return {
                     fmTrans:fmTrans
                 }

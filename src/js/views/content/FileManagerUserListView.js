@@ -8,7 +8,22 @@ define([
 
     ],
     function(Marionette,JST,fileManagerConfig,fmTrans,FileManagerUserFileView) {
-        return Marionette.CompositeView.extend({
+        var CollectionView =  Marionette.CollectionView.extend({
+                className:'fm-user-files',
+                childView: FileManagerUserFileView,
+                tagName:function(){
+                    return (fileManagerConfig.getTypeViewContent() === 'th' ? 'tbody' : 'div')
+                },
+                childViewOptions:function() {
+                    return {
+                        tagName: (fileManagerConfig.getTypeViewContent() === 'th' ? 'tr' : 'div')
+                    }
+                },
+                filter: function (child, index, collection) {
+                    return child.get('namespace') === this.collection.lastNamespace;
+                }
+        });
+        return Marionette.View.extend({
             initialize:function(){
                 this.collection.fetch({
                 });
@@ -22,22 +37,18 @@ define([
             events:{
                 'click @ui.fmBackFolder':'fmBackFolder'
             },
+            regions:{
+                'tBodyRegion':{
+                    el: '[data-region=tbody]',
+                    replaceElement: true
+
+                }
+            },
             collectionEvents:{
                 "selectContent":"selectContent"
             },
-            filter: function (child, index, collection) {
-                return child.get('namespace') === this.collection.lastNamespace;
-            },
-            onBeforeDestroy:function(){
-                this.collection.off('selectContent');
-            },
+
             childViewContainer: ".fm-user-files",
-            childView: FileManagerUserFileView,
-            childViewOptions:function() {
-                return {
-                    tagName: (fileManagerConfig.getTypeViewContent() === 'th' ? 'tr' : 'div')
-                }
-            },
             fmBackFolder:function(){
                 var _this = this,
                     _namespace='',
@@ -55,14 +66,17 @@ define([
                     this.collection.lastNamespace=model.get('namespace')+model.get('name')+'/';
                     this.render();
                 }else{
-                    this.trigger('selectFile',model.toJSON())
+                    this.triggerMethod('selectFile',model.toJSON())
                 }
 
             },
             onRender:function(){
+                this.showChildView('tBodyRegion', new CollectionView({
+                    collection:this.collection
+                }))
             },
             template: JST.FileManagerUserListView,
-            templateHelpers:function(){
+            templateContext:function(){
                 var _lastNamespace=this.collection.lastNamespace;
                 if(this.collection.lastNamespace!='/'){
                     _lastNamespace=_lastNamespace.split('/');

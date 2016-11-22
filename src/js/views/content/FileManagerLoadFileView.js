@@ -6,7 +6,7 @@ define([
 
     ],
     function(Marionette,JST,fileManagerConfig,fmTrans) {
-        return Marionette.ItemView.extend({
+        return Marionette.View.extend({
             initialize:function(args){
                 this.lastNamespace=args.lastNamespace||'/';
             },
@@ -33,9 +33,6 @@ define([
                 xhr.upload.addEventListener('progress', this.uploadProgress.bind(this), false);
                 xhr.onreadystatechange = this.stateChange.bind(this);
                 xhr.open('POST', fileManagerConfig.getHost()+'/api/loadFile/');
-                //xhr.setRequestHeader('X-FILE-NAME', file.name);
-                //xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                //xhr.setRequestHeader('X-FILE-NAMESPACE', this.lastNamespace);
                 formData.append("file", file);
                 formData.append("namespace", this.lastNamespace);
                 xhr.send(formData);
@@ -77,7 +74,7 @@ define([
                 this.dropZoneStart()
             },
             template: JST.FileManagerLoadFileView,
-            templateHelpers:function(){
+            templateContext:function(){
                 return {
                     fmTrans:fmTrans
                 }

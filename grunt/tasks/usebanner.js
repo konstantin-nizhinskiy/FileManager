@@ -1,7 +1,5 @@
 "use strict";
 var path = require('path'),
-    YAML = require('yamljs'),
-    tosource = require('tosource'),
     grunt = require('grunt');
 module.exports = {
     usebanner: {

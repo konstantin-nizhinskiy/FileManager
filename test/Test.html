@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="../bower_components/require/index.js"></script>
+<script src="../dist/js/FileManager.min.js"></script>
+<body>
+<script>
+    require.config({
+        baseUrl: "./",
+        paths:{
+            "jquery":"../bower_components/jquery/dist/jquery.min"
+        }
+    });
+
+    require(['FileManager'],
+            function(fileManager){
+        fileManager.init({
+            'host':'fm', //url api FileManager
+            'maxFileSize':'1048576', //max(byte) file size load
+            'locale':'ru'//locale FileManager
+        });
+    })
+</script>
+</body>
+</html>
+
+
+"NetworkError: 404 Not Found - http://localhost:63342/FileManager/test/jquery.js"
+jquery.js
+"NetworkError: 404 Not Found - http://localhost:63342/FileManager/test/marionette.js"
+marionette.js
+"NetworkError: 404 Not Found - http://localhost:63342/FileManager/test/backbone.js"
+backbone.js
+"NetworkError: 404 Not Found - http://localhost:63342/FileManager/test/underscore.js"

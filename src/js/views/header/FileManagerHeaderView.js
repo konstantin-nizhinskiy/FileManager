@@ -4,7 +4,7 @@ define([
         'translations/fmTrans'
     ],
     function(Marionette,JST,fmTrans) {
-        return Marionette.ItemView.extend({
+        return Marionette.View.extend({
             _close:false,
             initialize:function(args){
                 if('undefined'!==typeof args.close ){
@@ -12,7 +12,11 @@ define([
                 }
             },
             ui:{
+                "close":"[data-bind=close]",
                 fmHeaderCancel:'.fm-header-cancel'
+            },
+            triggers:{
+              "click @ui.close":"fm:modal:close"
             },
             events:{
                 'click @ui.fmHeaderCancel':'fmHeaderCancel'
@@ -21,7 +25,7 @@ define([
                 this.trigger('fmHeaderCancel');
             },
             template: JST.FileManagerHeaderView,
-            templateHelpers:function(){
+            templateContext:function(){
                 return {
                     fmTrans:fmTrans,
                     close:this._close
